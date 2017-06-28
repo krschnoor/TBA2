@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ClassTBComponent } from './class-tb/class-tb.component';
+import { GlobalService } from './global.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { ClassTBComponent } from './class-tb/class-tb.component';
   
 })
 export class AppComponent {
+
+  constructor(private gs: GlobalService){
+    gs.gv = null
+  }
   title = 'app';
 }

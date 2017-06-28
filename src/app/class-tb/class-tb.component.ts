@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ClientService } from '../client.service';
 import {TBClassifiedPipe} from '../pipes/tbclassified.pipe';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-class-tb',
@@ -14,11 +15,13 @@ export class ClassTBComponent implements OnInit {
   entries;
   
 
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService,private gs: GlobalService) { }
 
   ngOnInit() {
-    this.clientService.getAccounts().subscribe(data => this.accounts = data);
-    this.clientService.getAjes().subscribe(data => this.entries = data);
-  }
+   
+   this.clientService.getAccounts(this.gs.gv[0].name).subscribe(data => this.accounts = data);
+   this.clientService.getAjes().subscribe(data => this.entries = data);
+   
+    }
 
 }

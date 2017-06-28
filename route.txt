@@ -1,0 +1,32 @@
+//this.router.navigate(['openclient'])
+
+import { Component, OnInit } from '@angular/core';
+import {ClientService } from '../client.service';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+ 
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+
+export class HomeComponent implements OnInit {
+
+  private client; 
+
+    constructor(private clientService: ClientService) { }
+
+     ngOnInit() {
+  
+     // this.clientService.getClient().subscribe(data => this.client= data[0]);
+    
+      }
+
+ public setClient(obj){
+   this.client = obj
+ }
+
+public getClient(obj){
+   return this.client 
+ }
+}

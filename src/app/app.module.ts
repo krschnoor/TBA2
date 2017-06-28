@@ -7,6 +7,13 @@ import { ClassTBComponent } from './class-tb/class-tb.component';
  import {ClientService }    from './client.service';
 import { TBClassifiedPipe } from './pipes/tbclassified.pipe';
 import { TBClassifiedBalance } from './pipes/tbclassified.pipe';
+import { routing} from './routes/routes.component';
+import { HomeComponent } from './home/home.component';
+import { AjeComponent } from './aje/aje.component';
+import { ClientlistComponent } from './clientlist/clientlist.component';
+import { GlobalService } from './global.service';
+import { ClientSelectComponent } from './client-select/client-select.component';
+
 
 
 
@@ -17,15 +24,24 @@ import { TBClassifiedBalance } from './pipes/tbclassified.pipe';
     AppComponent,
     ClassTBComponent,
     TBClassifiedPipe,
-    TBClassifiedBalance
-    
+    TBClassifiedBalance,
+     HomeComponent,
+     AjeComponent,
+     ClientlistComponent,
+     ClientSelectComponent,
+            
   ],
   imports: [
     BrowserModule, 
     FormsModule,
      HttpModule,
+     routing,
        ],
-  providers: [ClientService],
+  providers: [ClientService,GlobalService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+
+}
