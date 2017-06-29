@@ -1,0 +1,41 @@
+<div class="container" ng-controller="TBcontroller">
+ <div class="panel panel-default col-sm-11" >
+  <div class="panel-heading">Make Journal Entries Here<span class="text-left ">  
+   <button  ng-click="setContent('start.html')" type="button" class="btn btn-default">Cancel</button></span> 
+  </div>   
+   <div class="panel-body">
+    <div class="container" >
+    <form name="ajeform" ng-submit="postAje();" novalidate>
+    <div class="form-group form-group-sm col-xs-3" ng-class="{'has-error' : ajeform.$invalid}">
+    <span><button name="post"  type="submit" ng-disabled="ajeform.$invalid || totalAjeDr()!=totalAjeCr()" ng-submit="postAje()" type="button" class="btn btn-primary">Post</button><span>
+    <table class="table table-bordered table-condensed table-fixed">
+    <thead>
+      <tr>
+        <th class="col-xs-1">Account</th>
+        <th class="col-xs-2">Description</th>
+        <th class="col-xs-1">Debit</th>
+        <th class="col-xs-1">Credit</th>  
+        <th class="col-xs-1 ">Remove</th>  
+        <th class="col-xs-1 ">Add</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="1"></td><td><strong class="text-right">Totals:</strong></td><td class="text-right">{{ totalAjeDr() | number: 2}}</td><td class="text-right">{{ totalAjeCr() | number: 2}}</td><td/><td/></tr>
+      <tr class="form-inline" ng-repeat="entry in aje ">
+        <td><select focus ng-attr-id="{{ 1}}"  ng-required="true" class="input-large" ng-model="entry.accountID" ng-options="m._id  as m.name  for m in  accounts"  ></select> </td>
+        <td ><input  focus ng-attr-id="{{ 2 }}"   type="text" ng-model="entry.desc" /></td>
+        <td ><input  focus ng-attr-id="{{ 3 }}"  ng-pattern="/^[0-9]+([,.][0-9]+)?$/" class="input-mini text-right" ng-validate="number" type="number" ng-model="entry.debit" placeholder="" /></td>
+        <td ><input nextrow ng-attr-id="{{ 'input-' + $index }}" focus ng-keyDown="addAjeRow($index,$event.keyCode,$event)" ng-pattern="/^[0-9]+([,.][0-9]+)?$/" class="input-mini text-right" ng-validate="number" type="number" ng-model="entry.credit" /></td>
+        <td  class="text-center"><span  ng-click="deleteLine($index)" class="glyphicon glyphicon-trash"></span></td>
+        <td  class="text-center"><span  ng-click="addLine($index)" class="glyphicon glyphicon-plus"></span></td> 
+       </tr>
+    
+    </tbody>
+  </table>
+  </div>
+ </form>
+</div>
+</div>
+ <div class="panel-footer">Panel Footer</div>
+ </div>
+</div>
