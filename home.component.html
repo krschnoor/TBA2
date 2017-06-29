@@ -1,0 +1,12 @@
+
+  <h2>Welcome Trial Balance Express</h2>
+  <div class="panel-group cols-6-md">
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading">Current Client:</div>
+      <div class="panel-body">
+        <h4><strong>Client Name:&nbsp;</strong></h4><h3 *ngIf="client != undefined" >{{client.name}}</h3><br/>
+        <h4><strong>Client Fiscal Year End:&nbsp;</strong></h4><h3 *ngIf="client != undefined"  >{{client.fyes[0] | date}}</h3>
+    </div>
+
+  </div>
