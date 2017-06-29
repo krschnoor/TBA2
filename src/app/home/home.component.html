@@ -5,8 +5,8 @@
     <div class="panel panel-primary">
       <div class="panel-heading">Current Client:</div>
       <div class="panel-body">
-        <h4><strong>Client Name:&nbsp;</strong></h4><h3 *ngIf="client != undefined" >{{client.name}}</h3><br/>
-        <h4><strong>Client Fiscal Year End:&nbsp;</strong></h4><h3 *ngIf="client != undefined"  >{{client.fyes[0] | date}}</h3>
+        <span><h4><strong>Client Name:&nbsp;</strong></h4></span><span><h3 *ngIf="client != undefined" class="text-primary">{{client.name}}</h3></span><br/>
+        <span><h4><strong>Client Fiscal Year End:&nbsp;</strong></h4></span><span><h3 *ngIf="client != undefined" class="text-primary" >{{fye | date}}</h3></span>
     </div>
 
   </div>

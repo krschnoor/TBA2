@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class GlobalService {
 
 public gv;
+public fye;
 
   constructor() { }
 

@@ -81,7 +81,7 @@ var _a;
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The whole content below can be removed with the new code.-->\r\n\r\n<head>\r\n\r\n\r\n<style>\r\n.main{float:right;}\r\ndiv.tab {\r\n    float: left;\r\n    border: 1px solid #ccc;\r\n    background-color: #4393c1;\r\n    color: #000;\r\n    width: 10%;\r\n    height: 1000px;\r\n    margin-top:-25px;\r\n    text-align:center;\r\n  }\r\n\r\n.num {text-align:right}\r\n\r\n/* Style the buttons inside the tab */\r\ndiv.tab button {\r\n    display: block;\r\n    background-color: inherit;\r\n    color: black;\r\n    padding: 22px 16px;\r\n    width: 100%;\r\n    border: none;\r\n    outline: none;\r\n    text-align: left;\r\n    cursor: pointer;\r\n    transition: 0.3s;\r\n}\r\n\r\n/* Change background color of buttons on hover */\r\ndiv.tab button:hover {\r\n    background-color: #ddd;\r\n}\r\n\r\n/* Create an active/current \"tab button\" class */\r\ndiv.tab button.active {\r\n    background-color: #ccc;\r\n}\r\n\r\n</style>\r\n<link href=\"https://afeld.github.io/emoji-css/emoji.css\" rel=\"stylesheet\">\r\n</head>\r\n<body >\r\n  \r\n <nav class=\"navbar navbar-inverse\">\r\n  <div class=\"container-fluid\">\r\n    <div  class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\">Trial Balance Express <small ></small></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <li  class=\"active\"><a [routerLink]=\"['/home']\"  href=\"#\">Home - Status</a></li>\r\n      <li  class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Reports<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a  [routerLink]=\"['/tbclassified']\"  href=\"#\">Classified Trial Balance</a></li>\r\n          <li ><a href=\"#\">Add Client</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n     <li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Accounts<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a [routerLink]=\"['/aje']\"  href=\"#\">Journal Entry</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n      <li><a href=\"#\">Page 2</a></li>\r\n      <li><a href=\"#\">Page 3</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div  class=\"tab\">\r\n  <button class=\"tablinks\"><a [routerLink]=\"['/clients']\" href=\"#\">&nbsp;Open Client&nbsp;&nbsp;&nbsp;</a><i class=\"em em-open_file_folder\"></i> </button>\r\n  <button  class=\"tablinks\" >&nbsp;New Client&nbsp;&nbsp;&nbsp;<i class=\"em em-pencil2\"></i></button>\r\n  <button class=\"tablinks\" >Tokyo</button>\r\n</div>\r\n\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n     <div class=\"col-8-md\">\r\n  <router-outlet></router-outlet>\r\n     </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>"
+module.exports = "<!--The whole content below can be removed with the new code.-->\r\n\r\n<head>\r\n\r\n\r\n<style>\r\n.main{float:right;}\r\ndiv.tab {\r\n    float: left;\r\n    border: 1px solid #ccc;\r\n    background-color: #4393c1;\r\n    color: #000;\r\n    width: 15%;\r\n    height: 1000px;\r\n    margin-top:-25px;\r\n    text-align:center;\r\n  }\r\n.num {text-align:right}\r\n/* Style the buttons inside the tab */\r\ndiv.tab  button {\r\n    display: block;\r\n    background-color: inherit;\r\n    color: black;\r\n    padding: 22px 16px;\r\n    width: 100%;\r\n    border: none;\r\n    outline: none;\r\n    text-align: left;\r\n    cursor: pointer;\r\n    transition: 0.3s;\r\n}\r\n/* Change background color of buttons on hover */\r\ndiv.tab button:hover {\r\n    background-color: #ddd;\r\n}\r\n/* Create an active/current \"tab button\" class */\r\ndiv.tab button.active {\r\n    background-color: #ccc;\r\n}\r\n</style>\r\n<link href=\"https://afeld.github.io/emoji-css/emoji.css\" rel=\"stylesheet\">\r\n</head>\r\n<body >\r\n  \r\n <nav class=\"navbar navbar-inverse\">\r\n  <div class=\"container-fluid\">\r\n    <div  class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\">Trial Balance Express <small ></small></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <li  class=\"active\"><a [routerLink]=\"['/home']\"  href=\"#\">Home - Status</a></li>\r\n      <li  class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Reports<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a  [routerLink]=\"['/tbclassified']\"  href=\"#\">Classified Trial Balance</a></li>\r\n          <li ><a href=\"#\">Add Client</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n     <li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Accounts<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a [routerLink]=\"['/aje']\"  href=\"#\">Journal Entry</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n      <li><a href=\"#\">Page 2</a></li>\r\n      <li><a href=\"#\">Page 3</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div  class=\"tab\">\r\n  <button  class=\"tablinks\"><a [routerLink]=\"['/clients']\"  href=\"#\">&nbsp;Open Client&nbsp;&nbsp;&nbsp;<i class=\"em em-open_file_folder\"></i></a> </button>\r\n  <button  class=\"tablinks\" >&nbsp;New Client&nbsp;&nbsp;&nbsp;<i class=\"em em-pencil2\"></i></button>\r\n  <button class=\"tablinks\" >Tokyo</button>\r\n</div>\r\n\r\n<div  class=\"container-fluid\">\r\n  <div class=\"row\">\r\n     <div style=\"padding-left:80px\" class=\"col-sm-8\">\r\n      <router-outlet></router-outlet>\r\n     </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>"
 
 /***/ }),
 
@@ -217,7 +217,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/class-tb/class-tb.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n       \r\n       <h4 *ngFor=\"let account of accounts | tBClassified : 'CurrentAsset' \" > \r\n         Account Name: {{account.name}}\r\n     \r\n          <h6 *ngFor=\"let balance of account.balances |  tBClassifiedBalance: 2018\">\r\n        {{ balance.tbmonth}}  {{ balance.tbday}}  {{ balance.tbyear}}</h6>\r\n      \r\n          <h6 *ngFor=\"let aje of entries \">{{aje.debit}} + \" \" + {{aje.credit}}\" </h6>\r\n    \r\n       </h4>\r\n\r\n \r\n\r\n\r\n\r\n"
+module.exports = "\r\n       \r\n       \r\n\r\n \r\n\r\n<h3><span >{{client}}</span><br/>\r\n<h3><small>Classified Trial Balance as of &nbsp;<span  >{{fye}}</span></small></h3>\r\n <table class=\"table table-responsive\">\r\n    <thead>\r\n      <tr>\r\n        <th class=\"col-xs-2\">Account</th>\r\n        <th  class=\"col-xs-1 text-center\">Unadj. Balance</th>\r\n        <th   class=\"col-xs-1 text-center\" >Dr</th>\r\n        <th   class=\"col-xs-1 text-center\">Cr</th>\r\n        <th   class=\"col-xs-1 text-center\">Adjusted Balance</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      \r\n   <tr *ngFor=\"let account of accounts | tBClassified : 'CurrentAsset' \" >\r\n   <td >{{account.name}}</td>\r\n   <td >\r\n   <table *ngFor=\"let balance of account.balances |  tBClassifiedBalance :   currenttbyear : currenttbday :  currenttbmonth \">  \r\n   <tr>\r\n   <td width='100' align='right' >{{balance.unadjbal | number:2}}</td>\r\n   </tr>\r\n   </table>\r\n   </td> \r\n   <td>\r\n   <table >\r\n     <tr *ngFor=\"let entry of entries  \" >\r\n      <td width='100' align='right'>{{entry.debit| number:2}}</td>\r\n     </tr>\r\n     </table>\r\n   </td>\r\n   <td>\r\n   <table  >\r\n     <tr *ngFor=\"let entry of entries  \"  >\r\n     <td width='100' align='right' >{{entry.credit| number:2}}</td> \r\n     </tr>\r\n     </table>\r\n   </td>\r\n\r\n  <td >\r\n   <table *ngFor=\"let balance of account.balances |  tBClassifiedBalance :   currenttbyear : currenttbday :  currenttbmonth  \">  \r\n   <tr>\r\n   <td width='100' align='right' >{{balance.adjBal}}</td>\r\n   </tr>\r\n   </table>\r\n   </td>  \r\n  </tr>\r\n </tbody>\r\n</table>\r\n\r\n"
 
 /***/ }),
 
@@ -248,8 +248,13 @@ var ClassTBComponent = (function () {
     }
     ClassTBComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.client = this.gs.gv[0].name;
+        this.fye = new Date(this.gs.fye);
+        this.currenttbday = this.fye.getDate();
+        this.currenttbyear = this.fye.getYear();
+        this.currenttbmonth = this.fye.getMonth();
         this.clientService.getAccounts(this.gs.gv[0].name).subscribe(function (data) { return _this.accounts = data; });
-        this.clientService.getAjes().subscribe(function (data) { return _this.entries = data; });
+        this.clientService.getAjes(this.client, this.fye).subscribe(function (data) { return _this.entries = data; });
     };
     return ClassTBComponent;
 }());
@@ -288,7 +293,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/client-select/client-select.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <h1>Open Client</h1>\n    <form>\n      <div class=\"form-group\">\n        <label for=\"name\">Name</label>\n        <span  class=\"form-control\"> {{gs.gv[0].name}}</span>\n      </div>\n \n      <div class=\"form-group\">\n        <label for=\"name\">FYE:</label>\n        <select class=\"form-control\" id=\"fye\" required>\n        <option *ngFor=\"let yr of fyes\" [value]=\"yr\"> {{yr | date }} </option>\n       </select>\n      </div>\n \n      <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n \n    </form>\n</div>"
+module.exports = "<h1>Open Client</h1>\n    <form  #OpenClientForm=\"ngForm\" (ngSubmit)=\"onSubmit()\" >\n     <div class=\"row\">\n      <div class=\"form-group  col-sm-5\">\n        <label for=\"client\">Name</label>\n        <span name=\"client\" class=\"form-control\"> {{gs.gv[0].name}}</span>\n      </div>\n     </div>\n     <div class=\"row\" >\n      <div class=\"form-group  col-sm-5 \">\n        <label for=\"years\">FYE:</label>\n        <select  [(ngModel)]=\"fye\" name=\"years\"  class=\"form-control\" id=\"years\" #years=\"ngModel\" required>\n          <option></option>\n         <option  *ngFor=\"let yr of fyes\" [value]=\"yr\"> {{yr | date }} </option>\n       </select>\n       <div [hidden]=\"years.valid || years.pristine\"\n        class=\"alert alert-danger\">\n        Fiscal Tear End is Required\n       </div>\n      </div>\n     </div>\n     <div class=\"row\">   \n      <button style=\"margin-left:20px\" type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!OpenClientForm.form.valid\">Submit</button>\n      \n      \n     </div>\n    </form>"
 
 /***/ }),
 
@@ -323,6 +328,10 @@ var ClientSelectComponent = (function () {
     }
     ClientSelectComponent.prototype.ngOnInit = function () {
         this.fyes = this.gs.gv[0].fyes;
+    };
+    ClientSelectComponent.prototype.onSubmit = function () {
+        this.gs.fye = this.fye;
+        this.router.navigate(['home']);
     };
     return ClientSelectComponent;
 }());
@@ -369,8 +378,8 @@ var ClientService = (function () {
         return this.http.get("/accounts/get", { params: { name: name } })
             .map(function (res) { return res.json(); });
     };
-    ClientService.prototype.getAjes = function () {
-        return this.http.get("/ajes/get")
+    ClientService.prototype.getAjes = function (name, fye) {
+        return this.http.get("/ajes/get", { params: { name: name, fye: fye } })
             .map(function (res) { return res.json(); });
     };
     ClientService.prototype.getClient = function (name) {
@@ -526,7 +535,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n  <h2>Welcome Trial Balance Express</h2>\n  <div class=\"panel-group\">\n    \n    <div class=\"panel panel-primary\">\n      <div class=\"panel-heading\">Current Client:</div>\n      <div class=\"panel-body\">\n        <h4><strong>Client Name:&nbsp;</strong></h4><h3 *ngIf=\"client != undefined\" >{{client.name}}</h3><br/>\n        <h4><strong>Client Fiscal Year End:&nbsp;</strong></h4><h3 *ngIf=\"client != undefined\"  >{{client.fyes[0] | date}}</h3>\n    </div>\n\n  </div>\n"
+module.exports = "\n  <h2>Welcome Trial Balance Express</h2>\n  <div class=\"panel-group\">\n    \n    <div class=\"panel panel-primary\">\n      <div class=\"panel-heading\">Current Client:</div>\n      <div class=\"panel-body\">\n        <span><h4><strong>Client Name:&nbsp;</strong></h4></span><span><h3 *ngIf=\"client != undefined\" class=\"text-primary\">{{client.name}}</h3></span><br/>\n        <span><h4><strong>Client Fiscal Year End:&nbsp;</strong></h4></span><span><h3 *ngIf=\"client != undefined\" class=\"text-primary\" >{{fye | date}}</h3></span>\n    </div>\n\n  </div>\n"
 
 /***/ }),
 
@@ -554,11 +563,17 @@ var HomeComponent = (function () {
     function HomeComponent(clientService, gs) {
         this.clientService = clientService;
         this.gs = gs;
+        this.fye = new Date(1900, 0, 1);
     }
     HomeComponent.prototype.ngOnInit = function () {
         if (this.gs.gv != null) {
             this.client = this.gs.gv[0];
+            this.fye = this.gs.fye;
         }
+        else
+            this.client = { name: "No Client Selected",
+                fyes: [new Date(1900, 1, 1)]
+            };
     };
     return HomeComponent;
 }());
@@ -609,11 +624,12 @@ TBClassifiedPipe = __decorate([
 var TBClassifiedBalance = (function () {
     function TBClassifiedBalance() {
     }
-    TBClassifiedBalance.prototype.transform = function (items, fymonth) {
+    TBClassifiedBalance.prototype.transform = function (items, currtbyear, currtbday, currtbmonth) {
         if (items == null) {
             return null;
         }
-        return items.filter(function (item) { return item.tbyear == fymonth; });
+        alert(currtbday);
+        return items.filter(function (item) { return item.tbyear == currtbyear && item.tbday == currtbday && item.tbmonth == currtbmonth; });
     };
     return TBClassifiedBalance;
 }());

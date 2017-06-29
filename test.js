@@ -12,3 +12,15 @@ MongoClient.connect("mongodb://127.0.0.1:27017/Brad", function (err,db) {
             })
 
     })
+
+
+
+    <h4 *ngFor="let account of accounts | tBClassified : 'CurrentAsset' " > 
+         Account Name: {{account.name}}
+     
+          <h6 *ngFor="let balance of account.balances |  tBClassifiedBalance: 2018">
+        {{ balance.tbmonth}}  {{ balance.tbday}}  {{ balance.tbyear}}</h6>
+      
+          <h6 *ngFor="let aje of entries ">{{aje.debit}} + " " + {{aje.credit}}" </h6>
+    
+       </h4>

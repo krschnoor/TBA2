@@ -20,9 +20,9 @@ export class ClientService {
     .map((res:Response) => res.json());
   }
 
-  public getAjes() {
+  public getAjes(name,fye) {
 
-    return this.http.get(`/ajes/get`)
+    return this.http.get(`/ajes/get`,{params:{name:name,fye:fye}})
     .map((res:Response) => res.json());
 
   }

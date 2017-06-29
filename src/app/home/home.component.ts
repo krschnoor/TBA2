@@ -13,15 +13,21 @@ import { GlobalService } from '../global.service';
 export class HomeComponent implements OnInit {
 
   private client; 
+  private fye =  new Date(1900,0,1)
 
     constructor(private clientService: ClientService, private gs: GlobalService ) { }
 
      ngOnInit() {
      
       if (this.gs.gv != null){
-      this.client =  this.gs.gv[0]}
-     
-     }
+       this.client =  this.gs.gv[0]
+       this.fye = this.gs.fye}
+      else
+      this.client = {name: "No Client Selected",
+                     fyes: [new Date(1900,1,1)]
+                    }
+
+       }
 
  
 }

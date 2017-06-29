@@ -22,12 +22,12 @@ export class TBClassifiedPipe implements PipeTransform {
 })
 export class TBClassifiedBalance implements PipeTransform {
 
-  transform(items: Array<any>, fymonth: string):Array< any> {
+  transform(items: Array<any>, currtbyear: number,currtbday: number, currtbmonth: number):Array< any> {
       
       if(items==null) {
         return null}
-      
-      return items.filter(item => item.tbyear ==fymonth);
+      alert(currtbyear)
+      return items.filter(item => item.tbyear ==currtbyear &&  item.tbday ==currtbday && item.tbmonth ==currtbmonth );
     
   }
 

@@ -10,7 +10,9 @@ import { GlobalService } from '../global.service';
 })
 export class ClientSelectComponent implements OnInit {
 
- fyes = []
+ fyes = [];
+ fye;
+
   constructor(private clientService: ClientService,private router: Router, private gs: GlobalService ) { }
 
   ngOnInit() {
@@ -18,5 +20,15 @@ export class ClientSelectComponent implements OnInit {
   this.fyes = this.gs.gv[0].fyes
 
  }
+
+onSubmit() {
+
+
+this.gs.fye = this.fye
+
+this.router.navigate(['home'])
+
+}
+
 
 }
