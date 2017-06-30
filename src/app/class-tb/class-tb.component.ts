@@ -3,11 +3,13 @@ import {ClientService } from '../client.service';
 import {TBClassifiedPipe} from '../pipes/tbclassified.pipe';
 import { GlobalService } from '../global.service';
 import {TBClassifiedBalance} from '../pipes/tbclassified.pipe';
+import {AccountTotalComponent} from '../account-total/account-total.component'
+
 @Component({
   selector: 'app-class-tb',
   templateUrl: './class-tb.component.html',
   styleUrls: ['./class-tb.component.css'],
-  providers:[TBClassifiedBalance]
+  providers:[TBClassifiedBalance],
   
 })
 export class ClassTBComponent implements OnInit {
@@ -28,19 +30,28 @@ export class ClassTBComponent implements OnInit {
   ngOnInit() {
    
    this.client = this.gs.gv[0].name
-   this.fye = new Date(this.gs.fye)
-   this.currenttbday = this.fye.getDate()
-   this.currenttbyear = this.fye.getYear()
-   this.currenttbmonth = this.fye.getMonth()
+   this.fye = this.gs.fye
+   
+  
+   this.clientService.getAjes(this.client,this.fye).subscribe(data => this.setEntries(data));
+   this.clientService.getAccounts(this.gs.gv[0].name).subscribe(data => this.setAccounts(data));
 
-   this.clientService.getAccounts(this.gs.gv[0].name).subscribe(data => this.accounts = data);
-   this.clientService.getAjes(this.client,this.fye).subscribe(data => this.entries = data);
    
       }
 
 
-   getBalance(acct){
-      return  this.mypipe.transform(acct.balances,this.currenttbyear,this.currenttbday,this.currenttbmonth)
+    setEntries(data){
+    
+    this.entries = data
+    
    }
+
+    setAccounts(data){
+    
+    this.accounts = data
+     
+   }
+
+
 
 }

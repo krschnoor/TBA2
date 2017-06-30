@@ -3,53 +3,64 @@
        
 
  
+<div class="panel-group">
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading">Current Client:&nbsp;{{client}}<br/>
+      <small>Classified Trial Balance as of &nbsp;<span  >{{fye}}</span></small>
+      </div>
+      <div class="panel-body">
 
-<h3><span >{{client}}</span><br/>
-<h3><small>Classified Trial Balance as of &nbsp;<span  >{{fye}}</span></small></h3>
- <table class="table table-responsive">
-    <thead>
-      <tr>
-        <th class="col-xs-2">Account</th>
-        <th  class="col-xs-1 text-center">Unadj. Balance</th>
-        <th   class="col-xs-1 text-center" >Dr</th>
-        <th   class="col-xs-1 text-center">Cr</th>
-        <th   class="col-xs-1 text-center">Adjusted Balance</th>
-      </tr>
-    </thead>
-    <tbody>
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+            <th class="col-xs-2">Account</th>
+            <th  class="col-xs-1 text-center">Unadj. Balance</th>
+            <th   class="col-xs-1 text-center" >Dr</th>
+            <th   class="col-xs-1 text-center">Cr</th>
+            <th   class="col-xs-1 text-center">Adjusted Balance</th>
+           </tr>
+          </thead>
+          <tbody>
       
-   <tr *ngFor="let account of accounts | tBClassified : 'CurrentAsset' " >
-   <td >{{account.name}}</td>
-   <td >
-   <table *ngFor="let balance of account.balances |  tBClassifiedBalance :   currenttbyear : currenttbday :  currenttbmonth ">  
-   <tr>
-   <td width='100' align='right' >{{balance.unadjbal | number:2}}</td>
-   </tr>
-   </table>
-   </td> 
-   <td>
-   <table >
-     <tr *ngFor="let entry of entries  " >
-      <td width='100' align='right'>{{entry.debit| number:2}}</td>
-     </tr>
-     </table>
-   </td>
-   <td>
-   <table  >
-     <tr *ngFor="let entry of entries  "  >
-     <td width='100' align='right' >{{entry.credit| number:2}}</td> 
-     </tr>
-     </table>
-   </td>
+          <tr *ngFor="let account of accounts | tBClassified : 'CurrentAsset' " >
+          <td >{{account.name}}</td>
+          <td >
+           <table *ngFor="let balance of account.balances |  tBClassifiedBalance :   fye: fye  ">  
+           <tr>
+           <td width='100' align='right' >{{balance.unadjbal | number:'1.2-2'  }}</td>
+           </tr>
+           </table>
+          </td> 
+          <td>
+           <table >
+           <tr *ngFor="let entry of entries | tBClassifiedEntry: account._id " >
+           <td width='100' align='right'>{{entry.debit | number:'1.2-2' }}</td>
+           </tr>
+           </table>
+          </td>
+          <td>
+           <table  >
+           <tr *ngFor="let entry of entries | tBClassifiedEntry: account._id "  >
+           <td width='100' align='right' >{{entry.credit | number:'1.2-2' }}</td> 
+           </tr>
+           </table>
+          </td>
 
-  <td >
-   <table *ngFor="let balance of account.balances |  tBClassifiedBalance :   currenttbyear : currenttbday :  currenttbmonth  ">  
-   <tr>
-   <td width='100' align='right' >{{balance.adjBal}}</td>
-   </tr>
-   </table>
-   </td>  
-  </tr>
- </tbody>
-</table>
+          <td >
+          <table *ngFor="let balance of account.balances |  tBClassifiedBalance :  fye: fye  ">  
+          <tr>
+          <td width='100' align='right'> <total [account]="account" [entries]="entries" >(balance)</total></td>
+          </tr>
+          </table>
+          </td>  
+          </tr>
+         </tbody>
+        </table>
+
+
+
+      </div>
+    </div>
+</div>
 

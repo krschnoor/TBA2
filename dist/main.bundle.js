@@ -13,6 +13,83 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 
 /***/ }),
 
+/***/ "../../../../../src/app/account-total/account-total.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  {{balance| number:'1.2-2'}}\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/account-total/account-total.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_service__ = __webpack_require__("../../../../../src/app/global.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountTotalComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AccountTotalComponent = (function () {
+    function AccountTotalComponent(gs) {
+        this.gs = gs;
+    }
+    AccountTotalComponent.prototype.ngOnInit = function () {
+        this.client = this.gs.gv[0].name;
+        this.fye = this.gs.fye;
+        this.getTotal();
+    };
+    AccountTotalComponent.prototype.getTotal = function () {
+        var total = 0;
+        for (var ctr = 0; ctr < this.entries.length; ctr++) {
+            if (this.entries[ctr].AcctId == this.account._id) {
+                if (this.account.category == 'Asset') {
+                    total += this.entries[ctr].debit;
+                    total -= this.entries[ctr].credit;
+                }
+                else {
+                    total -= this.entries[ctr].debit;
+                    total += this.entries[ctr].credit;
+                }
+            }
+        }
+        this.balance = total;
+    };
+    return AccountTotalComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", Object)
+], AccountTotalComponent.prototype, "account", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])('entries'),
+    __metadata("design:type", Object)
+], AccountTotalComponent.prototype, "entries", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Output */])(),
+    __metadata("design:type", Object)
+], AccountTotalComponent.prototype, "balance", void 0);
+AccountTotalComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+        selector: 'total',
+        template: __webpack_require__("../../../../../src/app/account-total/account-total.component.html"),
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__global_service__["a" /* GlobalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__global_service__["a" /* GlobalService */]) === "function" && _a || Object])
+], AccountTotalComponent);
+
+var _a;
+//# sourceMappingURL=account-total.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/aje/aje.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -81,7 +158,7 @@ var _a;
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The whole content below can be removed with the new code.-->\r\n\r\n<head>\r\n\r\n\r\n<style>\r\n.main{float:right;}\r\ndiv.tab {\r\n    float: left;\r\n    border: 1px solid #ccc;\r\n    background-color: #4393c1;\r\n    color: #000;\r\n    width: 15%;\r\n    height: 1000px;\r\n    margin-top:-25px;\r\n    text-align:center;\r\n  }\r\n.num {text-align:right}\r\n/* Style the buttons inside the tab */\r\ndiv.tab  button {\r\n    display: block;\r\n    background-color: inherit;\r\n    color: black;\r\n    padding: 22px 16px;\r\n    width: 100%;\r\n    border: none;\r\n    outline: none;\r\n    text-align: left;\r\n    cursor: pointer;\r\n    transition: 0.3s;\r\n}\r\n/* Change background color of buttons on hover */\r\ndiv.tab button:hover {\r\n    background-color: #ddd;\r\n}\r\n/* Create an active/current \"tab button\" class */\r\ndiv.tab button.active {\r\n    background-color: #ccc;\r\n}\r\n</style>\r\n<link href=\"https://afeld.github.io/emoji-css/emoji.css\" rel=\"stylesheet\">\r\n</head>\r\n<body >\r\n  \r\n <nav class=\"navbar navbar-inverse\">\r\n  <div class=\"container-fluid\">\r\n    <div  class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\">Trial Balance Express <small ></small></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <li  class=\"active\"><a [routerLink]=\"['/home']\"  href=\"#\">Home - Status</a></li>\r\n      <li  class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Reports<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a  [routerLink]=\"['/tbclassified']\"  href=\"#\">Classified Trial Balance</a></li>\r\n          <li ><a href=\"#\">Add Client</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n     <li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Accounts<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a [routerLink]=\"['/aje']\"  href=\"#\">Journal Entry</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n      <li><a href=\"#\">Page 2</a></li>\r\n      <li><a href=\"#\">Page 3</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div  class=\"tab\">\r\n  <button  class=\"tablinks\"><a [routerLink]=\"['/clients']\"  href=\"#\">&nbsp;Open Client&nbsp;&nbsp;&nbsp;<i class=\"em em-open_file_folder\"></i></a> </button>\r\n  <button  class=\"tablinks\" >&nbsp;New Client&nbsp;&nbsp;&nbsp;<i class=\"em em-pencil2\"></i></button>\r\n  <button class=\"tablinks\" >Tokyo</button>\r\n</div>\r\n\r\n<div  class=\"container-fluid\">\r\n  <div class=\"row\">\r\n     <div style=\"padding-left:80px\" class=\"col-sm-8\">\r\n      <router-outlet></router-outlet>\r\n     </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>"
+module.exports = "<!--The whole content below can be removed with the new code.-->\r\n\r\n<head>\r\n\r\n\r\n<style>\r\n.main{float:right;}\r\ndiv.tab {\r\n    float: left;\r\n    border: 1px solid #ccc;\r\n    background-color: #4393c1;\r\n    color: #000;\r\n    width: 12%;\r\n    height: 1500px;\r\n    margin-top:-25px;\r\n    text-align:center;\r\n  }\r\n.num {text-align:right}\r\n/* Style the buttons inside the tab */\r\ndiv.tab  button {\r\n    display: block;\r\n    background-color: inherit;\r\n    color: black;\r\n    padding: 22px 16px;\r\n    width: 100%;\r\n    border: none;\r\n    outline: none;\r\n    text-align: left;\r\n    cursor: pointer;\r\n    transition: 0.3s;\r\n}\r\n/* Change background color of buttons on hover */\r\ndiv.tab button:hover {\r\n    background-color: #ddd;\r\n}\r\n/* Create an active/current \"tab button\" class */\r\ndiv.tab button.active {\r\n    background-color: #ccc;\r\n}\r\n</style>\r\n<link href=\"https://afeld.github.io/emoji-css/emoji.css\" rel=\"stylesheet\">\r\n</head>\r\n<body >\r\n  \r\n <nav class=\"navbar navbar-inverse\">\r\n  <div class=\"container-fluid\">\r\n    <div  class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\">Trial Balance Express <small ></small></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <li  class=\"active\"><a [routerLink]=\"['/home']\"  href=\"#\">Home - Status</a></li>\r\n      <li  class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Reports<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a  [routerLink]=\"['/tbclassified']\"  href=\"#\">Classified Trial Balance</a></li>\r\n          <li ><a href=\"#\">Add Client</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n     <li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Accounts<span class=\"caret\"></span></a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li ><a [routerLink]=\"['/aje']\"  href=\"#\">Journal Entry</a></li>\r\n          <li><a href=\"#\">Page 1-3</a></li>\r\n        </ul>\r\n      </li>\r\n      <li><a href=\"#\">Page 2</a></li>\r\n      <li><a href=\"#\">Page 3</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div  class=\"tab\">\r\n  <button  class=\"tablinks\"><a [routerLink]=\"['/clients']\"  href=\"#\">&nbsp;Open Client&nbsp;&nbsp;&nbsp;<i class=\"em em-open_file_folder\"></i></a> </button>\r\n  <button  class=\"tablinks\" >&nbsp;New Client&nbsp;&nbsp;&nbsp;<i class=\"em em-pencil2\"></i></button>\r\n  <button class=\"tablinks\" >Tokyo</button>\r\n</div>\r\n\r\n<div  class=\"container-fluid\">\r\n  <div class=\"row\">\r\n     <div style=\"padding-left:80px\" class=\"col-sm-8\">\r\n      <router-outlet></router-outlet>\r\n     </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n</body>"
 
 /***/ }),
 
@@ -142,6 +219,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__clientlist_clientlist_component__ = __webpack_require__("../../../../../src/app/clientlist/clientlist.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__global_service__ = __webpack_require__("../../../../../src/app/global.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__client_select_client_select_component__ = __webpack_require__("../../../../../src/app/client-select/client-select.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__account_total_account_total_component__ = __webpack_require__("../../../../../src/app/account-total/account-total.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -149,6 +227,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -176,10 +256,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__class_tb_class_tb_component__["a" /* ClassTBComponent */],
             __WEBPACK_IMPORTED_MODULE_7__pipes_tbclassified_pipe__["a" /* TBClassifiedPipe */],
             __WEBPACK_IMPORTED_MODULE_7__pipes_tbclassified_pipe__["b" /* TBClassifiedBalance */],
+            __WEBPACK_IMPORTED_MODULE_7__pipes_tbclassified_pipe__["c" /* TBClassifiedEntry */],
             __WEBPACK_IMPORTED_MODULE_9__home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_10__aje_aje_component__["a" /* AjeComponent */],
             __WEBPACK_IMPORTED_MODULE_11__clientlist_clientlist_component__["a" /* ClientlistComponent */],
             __WEBPACK_IMPORTED_MODULE_13__client_select_client_select_component__["a" /* ClientSelectComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__account_total_account_total_component__["a" /* AccountTotalComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -217,7 +299,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/class-tb/class-tb.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n       \r\n       \r\n\r\n \r\n\r\n<h3><span >{{client}}</span><br/>\r\n<h3><small>Classified Trial Balance as of &nbsp;<span  >{{fye}}</span></small></h3>\r\n <table class=\"table table-responsive\">\r\n    <thead>\r\n      <tr>\r\n        <th class=\"col-xs-2\">Account</th>\r\n        <th  class=\"col-xs-1 text-center\">Unadj. Balance</th>\r\n        <th   class=\"col-xs-1 text-center\" >Dr</th>\r\n        <th   class=\"col-xs-1 text-center\">Cr</th>\r\n        <th   class=\"col-xs-1 text-center\">Adjusted Balance</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      \r\n   <tr *ngFor=\"let account of accounts | tBClassified : 'CurrentAsset' \" >\r\n   <td >{{account.name}}</td>\r\n   <td >\r\n   <table *ngFor=\"let balance of account.balances |  tBClassifiedBalance :   currenttbyear : currenttbday :  currenttbmonth \">  \r\n   <tr>\r\n   <td width='100' align='right' >{{balance.unadjbal | number:2}}</td>\r\n   </tr>\r\n   </table>\r\n   </td> \r\n   <td>\r\n   <table >\r\n     <tr *ngFor=\"let entry of entries  \" >\r\n      <td width='100' align='right'>{{entry.debit| number:2}}</td>\r\n     </tr>\r\n     </table>\r\n   </td>\r\n   <td>\r\n   <table  >\r\n     <tr *ngFor=\"let entry of entries  \"  >\r\n     <td width='100' align='right' >{{entry.credit| number:2}}</td> \r\n     </tr>\r\n     </table>\r\n   </td>\r\n\r\n  <td >\r\n   <table *ngFor=\"let balance of account.balances |  tBClassifiedBalance :   currenttbyear : currenttbday :  currenttbmonth  \">  \r\n   <tr>\r\n   <td width='100' align='right' >{{balance.adjBal}}</td>\r\n   </tr>\r\n   </table>\r\n   </td>  \r\n  </tr>\r\n </tbody>\r\n</table>\r\n\r\n"
+module.exports = "\r\n       \r\n       \r\n\r\n \r\n<div class=\"panel-group\">\r\n    \r\n    <div class=\"panel panel-primary\">\r\n      <div class=\"panel-heading\">Current Client:&nbsp;{{client}}<br/>\r\n      <small>Classified Trial Balance as of &nbsp;<span  >{{fye}}</span></small>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n\r\n        <table class=\"table table-responsive\">\r\n          <thead>\r\n            <tr>\r\n            <th class=\"col-xs-2\">Account</th>\r\n            <th  class=\"col-xs-1 text-center\">Unadj. Balance</th>\r\n            <th   class=\"col-xs-1 text-center\" >Dr</th>\r\n            <th   class=\"col-xs-1 text-center\">Cr</th>\r\n            <th   class=\"col-xs-1 text-center\">Adjusted Balance</th>\r\n           </tr>\r\n          </thead>\r\n          <tbody>\r\n      \r\n          <tr *ngFor=\"let account of accounts | tBClassified : 'CurrentAsset' \" >\r\n          <td >{{account.name}}</td>\r\n          <td >\r\n           <table *ngFor=\"let balance of account.balances |  tBClassifiedBalance :   fye: fye  \">  \r\n           <tr>\r\n           <td width='100' align='right' >{{balance.unadjbal | number:'1.2-2'  }}</td>\r\n           </tr>\r\n           </table>\r\n          </td> \r\n          <td>\r\n           <table >\r\n           <tr *ngFor=\"let entry of entries | tBClassifiedEntry: account._id \" >\r\n           <td width='100' align='right'>{{entry.debit | number:'1.2-2' }}</td>\r\n           </tr>\r\n           </table>\r\n          </td>\r\n          <td>\r\n           <table  >\r\n           <tr *ngFor=\"let entry of entries | tBClassifiedEntry: account._id \"  >\r\n           <td width='100' align='right' >{{entry.credit | number:'1.2-2' }}</td> \r\n           </tr>\r\n           </table>\r\n          </td>\r\n\r\n          <td >\r\n          <table *ngFor=\"let balance of account.balances |  tBClassifiedBalance :  fye: fye  \">  \r\n          <tr>\r\n          <td width='100' align='right'> <total [account]=\"account\" [entries]=\"entries\" >(balance)</total></td>\r\n          </tr>\r\n          </table>\r\n          </td>  \r\n          </tr>\r\n         </tbody>\r\n        </table>\r\n\r\n\r\n\r\n      </div>\r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -228,6 +310,7 @@ module.exports = "\r\n       \r\n       \r\n\r\n \r\n\r\n<h3><span >{{client}}</
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client_service__ = __webpack_require__("../../../../../src/app/client.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__("../../../../../src/app/global.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_tbclassified_pipe__ = __webpack_require__("../../../../../src/app/pipes/tbclassified.pipe.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassTBComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -241,20 +324,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ClassTBComponent = (function () {
-    function ClassTBComponent(clientService, gs) {
+    function ClassTBComponent(clientService, gs, mypipe) {
         this.clientService = clientService;
         this.gs = gs;
+        this.mypipe = mypipe;
     }
     ClassTBComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.client = this.gs.gv[0].name;
-        this.fye = new Date(this.gs.fye);
-        this.currenttbday = this.fye.getDate();
-        this.currenttbyear = this.fye.getYear();
-        this.currenttbmonth = this.fye.getMonth();
-        this.clientService.getAccounts(this.gs.gv[0].name).subscribe(function (data) { return _this.accounts = data; });
-        this.clientService.getAjes(this.client, this.fye).subscribe(function (data) { return _this.entries = data; });
+        this.fye = this.gs.fye;
+        this.clientService.getAjes(this.client, this.fye).subscribe(function (data) { return _this.setEntries(data); });
+        this.clientService.getAccounts(this.gs.gv[0].name).subscribe(function (data) { return _this.setAccounts(data); });
+    };
+    ClassTBComponent.prototype.setEntries = function (data) {
+        this.entries = data;
+    };
+    ClassTBComponent.prototype.setAccounts = function (data) {
+        this.accounts = data;
     };
     return ClassTBComponent;
 }());
@@ -263,11 +351,12 @@ ClassTBComponent = __decorate([
         selector: 'app-class-tb',
         template: __webpack_require__("../../../../../src/app/class-tb/class-tb.component.html"),
         styles: [__webpack_require__("../../../../../src/app/class-tb/class-tb.component.css")],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__pipes_tbclassified_pipe__["b" /* TBClassifiedBalance */]],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__client_service__["a" /* ClientService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__client_service__["a" /* ClientService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__client_service__["a" /* ClientService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__client_service__["a" /* ClientService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__pipes_tbclassified_pipe__["b" /* TBClassifiedBalance */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__pipes_tbclassified_pipe__["b" /* TBClassifiedBalance */]) === "function" && _c || Object])
 ], ClassTBComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=class-tb.component.js.map
 
 /***/ }),
@@ -597,6 +686,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TBClassifiedPipe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TBClassifiedBalance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return TBClassifiedEntry; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -624,12 +714,17 @@ TBClassifiedPipe = __decorate([
 var TBClassifiedBalance = (function () {
     function TBClassifiedBalance() {
     }
-    TBClassifiedBalance.prototype.transform = function (items, currtbyear, currtbday, currtbmonth) {
+    TBClassifiedBalance.prototype.transform = function (items, fye) {
+        var _this = this;
         if (items == null) {
             return null;
         }
-        alert(currtbday);
-        return items.filter(function (item) { return item.tbyear == currtbyear && item.tbday == currtbday && item.tbmonth == currtbmonth; });
+        return items.filter(function (item) { return _this.compare(item, fye); });
+    };
+    TBClassifiedBalance.prototype.compare = function (item, fye) {
+        var dt1 = new Date(item.tbdate);
+        var dt2 = new Date(fye);
+        return dt1.getTime() == dt2.getTime();
     };
     return TBClassifiedBalance;
 }());
@@ -638,6 +733,23 @@ TBClassifiedBalance = __decorate([
         name: 'tBClassifiedBalance'
     })
 ], TBClassifiedBalance);
+
+var TBClassifiedEntry = (function () {
+    function TBClassifiedEntry() {
+    }
+    TBClassifiedEntry.prototype.transform = function (items, acctid) {
+        if (items == null) {
+            return null;
+        }
+        return items.filter(function (item) { return item.AcctId == acctid; });
+    };
+    return TBClassifiedEntry;
+}());
+TBClassifiedEntry = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Pipe */])({
+        name: 'tBClassifiedEntry'
+    })
+], TBClassifiedEntry);
 
 //# sourceMappingURL=tbclassified.pipe.js.map
 

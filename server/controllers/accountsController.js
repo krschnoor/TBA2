@@ -8,7 +8,7 @@ exports.getAccounts = function(req,res){
             }
             var currdb = db.db(req.query.name)
             var collection = currdb.collection('accounts');
-            collection.find().toArray(function (err, items) {
+            collection.find().sort({csort:1,ssort:1} ).toArray(function (err, items) {
                 res.json(items)
                  db.close()
             })

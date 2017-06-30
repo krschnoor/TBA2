@@ -37,9 +37,9 @@ exports.getAjes = function(req,res){
  MongoClient.connect("mongodb://127.0.0.1:27017/" , function(err,db){
  
  var mydb = db.db(req.query.name)
- var dt = new Date(req.query.fye)
+ var dt1 = new Date(req.query.fye)
 
- //console.log(req.query.name + "---" + req.query.fye)
+ console.log(req.query.name + "---" + dt1)
  var collection = mydb.collection('entries');
 
  
@@ -50,14 +50,17 @@ exports.getAjes = function(req,res){
          for(var ctr = 0;ctr<ajes.length;ctr++) { 
                     
              for(ctr2=0;ctr2<ajes[ctr].aje.length;ctr2++) {
-               if(+ajes[ctr].aje[ctr2].tbdate == +dt){ console.log("they equal")
+               var dt2 = new Date(ajes[ctr].aje[ctr2].tbdate)
+               console.log(dt1.getTime() + "--" + dt2.getTime())
+               if( dt1.getTime() == dt2.getTime()){ 
                retArr.push(ajes[ctr].aje[ctr2])}
              }
           }
 
 
         res.json(retArr)
-       // console.log(ajes) //ajes comes here.
+        console.log(retArr)
+        // console.log(ajes) //ajes comes here.
         db.close()}
     });    
  

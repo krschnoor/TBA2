@@ -14,25 +14,67 @@ var MongoClient = require('mongodb').MongoClient;
             var tbdt = new Date(2016,11,31)
              var tbdt2 = new Date(2015,11,31)
 
-           collection.insertOne({aje:[{AcctId:"595102524aed3023242c9d6b",tbdate:tbdt,debit:12000,credit:0},
-                               {AcctId:"595102524aed3023242c9d70",tbdate:tbdt,debit:12000,credit:0},
-                                {AcctId:"595102524aed3023242c9d6a",tbdate:tbdt,debit:0,credit:7000},
-                                {AcctId:"595102524aed3023242c9d64",tbdate:tbdt,debit:0,credit:5000} ]})
+           collection.insertOne({aje:[{AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                               {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                                {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:0,credit:7000},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:5000} ]})
            
              
-            collection.insertOne({aje:[{AcctId:"595102524aed3023242c9d61",tbdate:tbdt,debit:875.50,credit:0},
-                               {AcctId:"595102524aed3023242c9d62",tbdate:tbdt,debit:0,credit:229.50},
-                                {AcctId:"595102524aed3023242c9d66",tbdate:tbdt,debit:3500,credit:0},
-                                {AcctId:"595102524aed3023242c9d64",tbdate:tbdt,debit:0,credit:5000} ]})
+            collection.insertOne({aje:[{AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:875.50,credit:0},
+                               {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:229.50},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:3500,credit:0},
+                                {AcctId:"59568c34ca22c1140452276c",tbdate:tbdt,debit:0,credit:5000} ]})
+
+             collection.insertOne({aje:[{AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:875.50,credit:0},
+                               {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:229.50},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:3500,credit:0},
+                                {AcctId:"59568c34ca22c1140452276c",tbdate:tbdt,debit:0,credit:5000} ]})
 
 
-             collection.insertOne({aje:[{AcctId:"595102524aed3023242c9d61",tbdate:tbdt,debit:875.50,credit:0},
-                               {AcctId:"595102524aed3023242c9d62",tbdate:tbdt,debit:0,credit:229.50},
-                                {AcctId:"595102524aed3023242c9d66",tbdate:tbdt,debit:3500,credit:0},
-                                {AcctId:"595102524aed3023242c9d64",tbdate:tbdt,debit:0,credit:5000} ]})
+             collection.insertOne({aje:[{AcctId:"59568c34ca22c1140452276c",tbdate:tbdt,debit:875.50,credit:0},
+                               {AcctId:"59568c34ca22c1140452276c",tbdate:tbdt,debit:0,credit:229.50},
+                                {AcctId:"59568c34ca22c1140452276e",tbdate:tbdt,debit:3500,credit:0},
+                                {AcctId:"59564dba4822fd23709533c8",tbdate:tbdt,debit:0,credit:5000} ]})
 
-             collection.insertOne({aje:[{AcctId:"595102524aed3023242c9d61",tbdate:tbdt2,debit:875.50,credit:0},
-                               {AcctId:"595102524aed3023242c9d62",tbdate:tbdt2,debit:0,credit:229.50},
-                                {AcctId:"595102524aed3023242c9d66",tbdate:tbdt2,debit:3500,credit:0},
-                                {AcctId:"595102524aed3023242c9d64",tbdate:tbdt2,debit:0,credit:5000} ]})
+             collection.insertOne({aje:[{AcctId:"59568c34ca22c1140452276e",tbdate:tbdt2,debit:875.50,credit:0},
+                               {AcctId:"59568c34ca22c1140452276e",tbdate:tbdt2,debit:0,credit:229.50},
+                                {AcctId:"59568c34ca22c1140452276d",tbdate:tbdt2,debit:3500,credit:0},
+                                {AcctId:"59568c34ca22c1140452276d",tbdate:tbdt2,debit:0,credit:5000} ]})
+
+
+              collection.insertOne({aje:[{AcctId:"59568c34ca22c1140452276e",tbdate:tbdt2,debit:875.50,credit:0},
+                               {AcctId:"59568c34ca22c1140452276e",tbdate:tbdt2,debit:0,credit:229.50},
+                                {AcctId:"59568c34ca22c1140452276d",tbdate:tbdt2,debit:3500,credit:0},
+                                {AcctId:"59568c34ca22c1140452276d",tbdate:tbdt2,debit:0,credit:5000} ]})  
+
+
+               collection.insertOne({aje:[{AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:875.50,credit:0},
+                               {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:229.50},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:3500,credit:0},
+                                {AcctId:"59568c34ca22c1140452276c",tbdate:tbdt,debit:0,credit:5000} ]})
+
+
+               collection.insertOne({aje:[{AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                               {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                                {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:0,credit:7000},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:5000} ]})
+                 
+
+               collection.insertOne({aje:[{AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                               {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                                {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:0,credit:7000},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:5000} ]})
+           
+
+
+                collection.insertOne({aje:[{AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                               {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                                {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:0,credit:7000},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:5000} ]})
+                collection.insertOne({aje:[{AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                               {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:12000,credit:0},
+                                {AcctId:"59568c34ca22c11404522769",tbdate:tbdt,debit:0,credit:7000},
+                                {AcctId:"59568c34ca22c1140452276a",tbdate:tbdt,debit:0,credit:5000} ]})
+           
+                
           })
